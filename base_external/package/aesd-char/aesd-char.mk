@@ -5,7 +5,7 @@
 #
 ##############################################################
 
-AESD_CHAR_VERSION = f8c0277ad05dae1f9d7ac5852c2fbd421539ecf6
+AESD_CHAR_VERSION = bd99a56204c2c92395a08614627e81f8ea5912b2
 # Note: Be sure to reference the *ssh* repository URL here (not https) to work properly
 # with ssh keys and the automated build/test system.
 # Your site should start with git@github.com:
