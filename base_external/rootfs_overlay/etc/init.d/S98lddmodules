@@ -1,0 +1,28 @@
+#! /bin/sh
+
+cd /lib/modules/$(uname -r)/extra
+
+case "$1" in
+  start)
+    echo "Loading misc-modules and scull drivers"
+    module_load faulty
+    modprobe hello
+    scull_load
+    ;;
+  stop)
+    echo "Unloading misc-modules and scull drivers"
+    scull_unload
+    rmmod hello
+    module_unload faulty
+    ;;
+  *)
+    echo "Usage: $0 {start | stop}"
+  exit 1
+  esac
+
+  exit 0
+
+  # Reference:
+  # Simmonds, Chris. Mastering Embedded Linux Programming - Second Edition,
+  # Packt Publishing, Limited, 2017. ProQuest Ebook Central,
+  # http://ebookcentral.proquest.com/lib/ucb/detail.action?docID=4898669.# 

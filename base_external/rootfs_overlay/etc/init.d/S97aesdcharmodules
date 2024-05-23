@@ -1,0 +1,22 @@
+#! /bin/sh
+
+cd /lib/modules/$(uname -r)/extra
+
+case "$1" in
+  start)
+    echo "Loading aesd-char driver"
+    aesdchar_load
+    ;;
+  stop)
+    echo "Unloading aesd-char driver"
+    aesdchar_unload
+    ;;
+  *)
+    echo "Usage: $0 {start | stop}"
+  exit 1
+  esac
+
+  exit 0
+
+  # Reference:
+  # Simmonds, Chris. Mastering Embedded Linux Programming - Second Edition,
